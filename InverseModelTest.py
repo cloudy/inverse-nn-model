@@ -74,7 +74,7 @@ while not rospy.is_shutdown():
 	# Convert them to an np array
 	q=np.array([[float(joint_positions[i]) for i in joint_names]])
 
-	print q
+	#print q
 
 	# Perform a prediction
 
@@ -82,11 +82,11 @@ while not rospy.is_shutdown():
 	prediction_combined = np.hstack((prev_state - p_cube, prediction - p_cube))
 	joint_estimation = InverseModel.predict(prediction_combined)
 
-	print joint_estimation
+	#print joint_estimation
 	print '-----------------'
 
-	print prev_state.shape
-	print joint_estimation.shape
+	#print prev_state.shape
+	#print joint_estimation.shape
 	#Push the velocities to the robot
 	velocities['right_j0']=(joint_estimation[0][0]-prev_q[0][0])/dt
 	velocities['right_j1']=(joint_estimation[0][1]-prev_q[0][1])/dt
@@ -96,7 +96,8 @@ while not rospy.is_shutdown():
 	velocities['right_j5']=(joint_estimation[0][3]-prev_q[0][3])/dt
 	velocities['right_j6']=(joint_estimation[0][4]-prev_q[0][4])/dt
 
-
+        print velocities
+        
 	limb.set_joint_velocities(velocities)
 
 
