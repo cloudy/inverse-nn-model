@@ -15,8 +15,8 @@ limb=intera_interface.Limb('right')
 
 joint_names = ['right_j0','right_j1','right_j3','right_j5','right_j6']
 #p_cube = np.array([[0,-0.6,-0.07]])
-p_cube = np.array([0.1, -0.1,-0.07])
-#p_cube = np.array([0,0,0])
+#p_cube = np.array([0.1, -0.1,-0.07])
+p_cube = np.array([0.4,-0.5,-0.07])
 
 forward_model_file='weights/ForwardModel.h5'
 inverse_model_file='weights/InverseModelCombined.h5'
