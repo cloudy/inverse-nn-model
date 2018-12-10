@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # Test the Inverse Kinematic Model Estimator
 
 import numpy as np
@@ -42,7 +42,6 @@ limb.move_to_joint_positions(angles)
 prev_state = None
 prev_q= None
 is_first_run = True
-
 velocities=dict()
 
 # Velocity scale

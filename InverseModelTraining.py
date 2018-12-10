@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import glob
 import numpy as np
@@ -74,7 +74,6 @@ for data in input_training_data_n:
 
 plt.show()
 
-
 # Define the Inverse Model
 InverseModel = Sequential()
 InverseModel.add(Dense(200, activation="sigmoid", kernel_initializer="uniform", input_shape=(6,)))
@@ -112,7 +111,6 @@ def plotperformance(history):
     plt.show()
 
 plotperformance(history.history)
-
 
 if False != False: # ;), if X_Test  and y_Test are defined this will plot receiver operator characteristic
     scores = model.evaluate(X_Test, y_Test)
